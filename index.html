@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta charset="utf-8">
+    <title>Cloud Platform | Design</title>
+    <script id="sap-ui-bootstrap" src="https://sapui5.hana.ondemand.com/resources/sap-ui-core.js"
+        data-sap-ui-theme="sap_fiori_3"
+        data-sap-ui-libs="sap.tnt, sap.ui.commons, sap.m, sap.f, sap.ui.layout, sap.ui.core, sap.ui.unified"
+        data-sap-ui-bindingSyntax="complex" data-sap-ui-xx-bindingSyntax="complex" data-sap-ui-compatVersion="edge"
+        data-sap-ui-resourceroots='{"UI5FioriForTools": "./"}' data-sap-ui-preload="async">
+        </script>
+    <script>
+        sap.ui.getCore().attachInit(function () {
+            sap.ui.require([
+                "UI5FioriForTools/localService/mockserver",
+                "sap/ui/core/ComponentContainer"
+            ], function (mockserver) {
+                mockserver.onInit();
+                new sap.ui.core.ComponentContainer({
+                    name: "UI5FioriForTools"
+                }).placeAt("content");
+            });
+        });
+    </script>
+
+</head>
+
+<body class="sapUiBody" id="content">
+</body>
+
+</html>
